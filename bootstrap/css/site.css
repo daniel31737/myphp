@@ -1,0 +1,39 @@
+.lbltitle {
+        color:black;
+        display: inline;
+}
+
+.lblinput{
+        display: inline;
+}
+
+.buttonAddproduct{
+	margin-top: 20px;
+	display: block;
+	margin:auto;
+}
+
+.btn-primary:hover{
+	background:#33FF66 !important;
+	color: #333333 !important;
+	transition: background .2s linear;
+	-moz-transition: background .2s linear;
+	outline: none;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .75);
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, .75);
+  box-shadow: 0 0 1px rgba(0, 0, 0, .75);
+}
+
+body {
+ background-image: url("/images/background1.jpg");
+ background-color: #cccccc;
+}
+.panel-heading{
+        background-color:cadetblue;
+}
+.product-shop{
+        background-color: cadetblue;
+}
+.panel-heading{
+        background-color: cadetblue;
+}
