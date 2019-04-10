@@ -36,6 +36,7 @@ class Db{
         }
         return $row;
     }
+
     //lay danh sach theo loai san pham
     public static function list_product_by_cateid($cateid){
         $db = new Db();

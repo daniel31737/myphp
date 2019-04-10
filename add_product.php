@@ -55,7 +55,7 @@
             <lable class="control-label col-sm-5">Mô tả sản phẩm</lable>
         </div>
         <div class="lblinput">
-            <textarea class="col-sm-6" id="comment" cols="5" rows="5" value="<?php echo isset($_POST["txtdesc"]) ? $_POST["txtdesc"] : "" ; ?>" ></textarea>
+            <input class="col-sm-6" id="comment" name="txtdesc" value="<?php echo isset($_POST["txtdesc"]) ? $_POST["txtdesc"] : "" ; ?>" />
         </div>    
     </div>
 

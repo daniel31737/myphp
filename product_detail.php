@@ -1,6 +1,6 @@
 <?php 
-require_once("/Entities/product.class.php");
-require_once("/Entities/category.class.php");
+    require_once("entities/product.class.php");
+    require_once("entities/category.class.php");
 ?>
 <?php 
 include_once("header.php");
@@ -9,12 +9,13 @@ if(!isset($_GET["id"])){
 }
 else{
     $id = $_GET["id"];
-
     //lay gia tri dau tien trong mang cac doi tuong
-    $prod = reset(Product::get_product($id));
+    $ArrayTemp = Product::get_product($id);
+    $prod = reset($ArrayTemp);
     $prods_relate = Product::list_product_relate($prod["CateID"], $id);
 }
 $cates = Category::list_category();
+$prods = Product::list_product();
 ?>
 <div class="container text-center">
         <div class="row">
@@ -36,18 +37,18 @@ $cates = Category::list_category();
                 </div>
                 <div class="col-sm-6">   
                     <div style="padding-left:10px">
-                      <h3 class="text-info">
-                      <?php echo $prod["ProductName"]; ?>
-                      </h3>
-                      <p>
-                        Gia : <?php echo $prod["Price"]; ?>
-                      </p>
-                      <p>
-                        Mo ta: <?php echo $prod["Description"]; ?>
-                      </p>
-                      <p>
-                    <button type="button" class="btn btn-primary">Mua hàng</button>
-                    </p>
+                        <h3 class="text-info">
+                            <?php echo $prod["ProductName"]; ?>
+                        </h3>
+                        <p>
+                            Giá: <?php echo $prod["Price"]; ?>
+                        </p>
+                        <p>
+                            Mô tả: <?php echo $prod["Description"]; ?>
+                        </p>
+                        <p>
+                            <button type="button" class="btn btn-primary">Mua hàng</button>
+                        </p>
                     </div>                   
                 </div>
                 
@@ -66,7 +67,7 @@ $cates = Category::list_category();
                         </p>
                         <p class="text-info"><?php echo $item["Price"]; ?></p>
                         <p>
-                    <button type="button" class="btn btn-primary">Mua hàng</button>
+                    <button type="button" class="btn btn-primary" onclick="location.href='/lab5/shopping_cart.php?id=<?php echo $prods["ProductID"]; ?>'">Mua hàng</button>
                     </p>
                  </div>
                     <?php } ?>
